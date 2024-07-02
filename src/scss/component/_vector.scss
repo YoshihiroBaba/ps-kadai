@@ -1,0 +1,29 @@
+@use '../foundation/index' as *;
+
+.c-vector{
+    display: inline-block;
+    border-bottom: 1px solid $cWhite;
+    border-right: 1px solid $cWhite;
+    transform: skew(45deg);
+    width: 16px;
+    height: 4.5px;
+    &--news{
+        @extend .c-vector;
+        transform: translateY(-50%) skew(45deg);
+        position:absolute;
+        top: 50%;
+        right: 32px;
+    }
+    &--recruit{
+        @extend .c-vector;
+        transform: translateY(-45%) skew(45deg);
+        position:absolute;
+        bottom: 45%;
+        right: 16px;
+        @include responsive(sm){
+        right:0;
+        top: 50%;
+        transform: translateY(-50%) skew(45deg);
+        }
+    }
+  }

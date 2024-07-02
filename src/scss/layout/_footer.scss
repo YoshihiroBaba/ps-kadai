@@ -1,0 +1,153 @@
+@use '../foundation/index' as *;
+
+.l-footer{
+    &__inner{
+        max-width: 1036px;
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: space-between;
+        @include responsive(md){
+            padding-right: 50px;
+        }
+        @include responsive(sm){
+            flex-direction: column-reverse;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    &__main{
+        padding-top: 85px;
+        background-color: $cSecondry;
+        width: 100%;
+        min-height: 469px;
+        color: $cWhite;
+        @include responsive(sm){
+            padding-top: 40px;
+            padding-bottom: 37px;
+        }
+        p {
+            @include responsive(sm){
+                font-size: 14px;
+            }
+        }
+    }
+    &__img{
+        @include responsive(sm){
+            width: 160px;
+            height: 36px;
+        }
+    }
+    &__body{
+        letter-spacing: .32px;
+        @include responsive(sm){
+            letter-spacing: normal;
+        }
+        &-name{
+            margin-top: 30px;
+            @include responsive(sm){
+                margin-top: 15px;
+            }
+        }
+        &-adnum{
+            margin-bottom: 13px;
+            display: block;
+            @include responsive(sm){
+                display: inline-block;
+                margin-bottom: 0;
+                margin-right: 2px;
+            }
+        }
+        &-adress{
+            margin-top: 15px;
+            @include responsive(sm){
+                margin-top: 10px;
+                span:last-of-type{
+                    display: none;
+                }
+            }
+        }
+        &-tel{
+            margin-top: 15px;
+            @include responsive(sm){
+                margin-top: 10px;
+            }
+        }
+        &-fax{
+            margin-top: 14px;
+            @include responsive(sm){
+                margin-top: 10px;
+            }
+        }
+    }
+    &__nav{
+        writing-mode: vertical-lr;
+        letter-spacing: 3.2px;
+        margin-top: 98px;
+        line-height: 16px;
+        @include responsive(sm){
+            writing-mode: horizontal-tb;
+            margin-top: 0;
+        }
+    }
+    &__menu-1{
+        margin-right: 78px;
+        @include responsive(sm){
+            margin-bottom: 60px;
+            font-size: 14px;
+            letter-spacing: normal;
+        }
+        &__list{
+            margin-right: 22px;
+            @include responsive(sm){
+                margin-right: 0;
+                margin-bottom: 22px;
+            }
+            &:nth-last-child(1){
+                margin-right: 0;
+                @include responsive(sm){
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    &__menu-2{
+        @include responsive(sm){
+            margin-bottom: 81px;
+            font-size: 14px;
+            letter-spacing: normal;
+        }
+        &__list{
+            margin-right: 22px;
+            @include responsive(sm){
+                margin-right: 0;
+                margin-bottom: 22px;
+            }
+            &:nth-last-child(1){
+                margin-right: 0;
+            }
+        }
+    }
+    &__copyright{
+        background-color: $cText;
+        width: 100%;
+        height: 60px;
+        display: grid;
+        align-items: center;
+        padding-bottom: 5px;
+        @include responsive(sm){
+            justify-content: start;
+            height: 48px;
+            padding-bottom: 6px;
+        }
+        small{
+            color: $cWhite;
+            font-size: 12px;
+            @include responsive(sm){
+                font-size: 10px;
+            }
+        }
+    }
+}

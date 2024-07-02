@@ -1,0 +1,55 @@
+@use '../foundation/index' as *;
+
+.p-cta{
+    background-image: url(/src/images/bckground-image-contact.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: auto;
+    padding-top: 72px;
+    padding-bottom: 75px;
+    text-align: center;
+    color: $cWhite;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    @include responsive(sm){
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 82px;
+        align-items: start;
+        padding-bottom: 95px;
+    }
+    &__txt{
+        margin-top: 28px;
+        margin-bottom: 48px;
+        line-height: 2em;
+        letter-spacing: .32px;
+        @include responsive(sm){
+            margin-top: 15px;
+            text-align: left;
+            margin-bottom: 22px;
+            br{
+                display: none;
+            }
+        }
+    }
+    &__btn-wrapper{
+        display: flex;
+        @include responsive(sm){
+            flex-direction: column;
+            width: 100%;
+        }
+        :first-child{
+            &:not(img){
+            margin-right: 80px;
+            @include responsive(sm){
+                margin-right: 0;
+                margin-bottom: 24px;
+            }
+            }
+        }
+    }
+}

@@ -1,0 +1,103 @@
+@use '../foundation/index' as *;
+.c-sp-global-menu{
+    position: fixed;
+    z-index: 300;
+    width: 100vw;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    height: 100vh;
+    background-color: $cPrimary;
+    color: #fff;
+    visibility: hidden;
+    transition: visibility 0.3s ease-in-out;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 350;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: none;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    // transform: translateY(-50%);
+    @include responsive--min(sm){
+        display: none;
+    }
+  }
+
+  .hamburger:hover{
+    box-shadow: 0 0 0.5rem rgba(161, 161, 161, 0.5);
+  }
+
+
+.hamburger__line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 20px;
+    height: 2px;
+    background-color: $cWhite;
+    -webkit-transition: inherit;
+    transition: inherit;
+  }
+
+  .hamburger__line::before, .hamburger__line::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    content: '';
+    -webkit-transition: inherit;
+    transition: inherit;
+  }
+
+  .hamburger__line::before {
+    top: -7px;
+  }
+
+  .hamburger__line::after {
+    top: 7px;
+  }
+  .hamburger[aria-expanded="true"] .hamburger__line {
+    background-color: transparent !important;
+  }
+
+  .hamburger[aria-expanded="true"] .hamburger__line::before, .hamburger[aria-expanded="true"] .hamburger__line::after {
+    top: 0;
+    background-color: $cWhite;
+  }
+
+
+
+  .hamburger[aria-expanded="true"] .hamburger__line::before {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .hamburger[aria-expanded="true"] .hamburger__line::after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }

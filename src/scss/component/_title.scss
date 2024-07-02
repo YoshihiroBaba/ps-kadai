@@ -1,0 +1,38 @@
+@use '../foundation/index' as *;
+
+.c-ttl{
+    display: flex;
+    align-items: baseline;
+    &__en{
+        font-size: 48px;
+        font-weight: bold;
+        color: $cText;
+        line-height: 48px;
+        font-family: 'Lato';
+        @include responsive(sm){
+            font-size: rclamp(32,48,375,768);
+        }
+    }
+    &__hr{
+        width: 23px;
+        height: 26px;
+        margin-left: 8px;
+        margin-right: 7px;
+        // margin-bottom: -6px;
+        background: linear-gradient(-50deg,transparent 49%,$cPrimary 49%,$cPrimary calc(50% + 1px),transparent calc(50% + 1px));
+        @include responsive(sm){
+            width: rclamp(17,23,375,768);
+            height: rclamp(20,26,375,768);
+        }
+    }
+    &__ja{
+        font-size: 24px;
+        color: $cPrimary;
+        font-weight: 500;
+        line-height: 24px;
+        @include responsive(sm){
+            font-size: rclamp(20,24,375,768);
+        }
+    }
+
+}

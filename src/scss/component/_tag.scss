@@ -1,0 +1,27 @@
+@use '../foundation/index' as *;
+
+.c-tag{
+    &__news{
+        width: 80px;
+        height: 28px;
+        color: $cWhite;
+        background-color: $cAccent;
+        transform: skewX(40deg);
+        border-radius: 5px;
+        margin-top: -1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include responsive(sm){
+            height: rclamp(20,28,375,768);
+            width: rclamp(65,80,375,768);
+            transform: skewX(0deg);
+            border-radius: 10px;
+            margin-top: 0;
+        }
+    }
+    &__txt{
+        font-size: 12px;
+        margin-top: -2px;
+    }
+}

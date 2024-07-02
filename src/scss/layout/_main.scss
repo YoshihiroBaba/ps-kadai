@@ -1,0 +1,766 @@
+@use '../foundation/index' as *;
+
+.l-mv{
+    background: linear-gradient(to right, $cPrimary, $cText);
+    height: 688px;
+    overflow: hidden;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+    @include responsive(md){
+        margin-bottom: 120px;
+    }
+    @include responsive(sm){
+        height: rclamp(611,688,375,768);
+    }
+    &__inner{
+        max-width:1016px;
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    &__bgimg{
+        // clip-path: polygon(0 0, 0% 100%, 41% 0);
+        clip-path: polygon(41.2% 0, 100% 0, 100% 100%, 0 100%);
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 100;
+        @include animation($name: fade, $duration:18s, $delay: 0s);
+        @include responsive--min(lg){
+        clip-path: polygon(41.2% 0, 100% 0, 100% 100%, 10% 100%);
+        }
+        @include responsive--min(llg){
+        clip-path: polygon(35.2% 0, 100% 0, 100% 100%, 20% 100%);
+        }
+        @include responsive(sm){
+            clip-path: polygon(76% 0, 100% 0, 100% 100%, 0 100%);
+        }
+        &--1{
+            @extend .l-mv__bgimg;
+            background-image: url(../images/top-image-1.jpg);
+        }
+        &--2{
+            @extend .l-mv__bgimg;
+            background-image: url(../images/top-image-2.jpg);
+            animation-delay: 6s;
+        }
+        &--3{
+            @extend .l-mv__bgimg;
+            background-image: url(../images/top-image-3.jpg);
+            animation-delay: 12s;
+        }
+    }
+
+    &__copy{
+        font-family: Lato;
+        z-index: 200;
+        font-size: 96px;
+        color: $cWhite;
+        font-weight: 900;
+        line-height: 112px;
+        letter-spacing: 2.2px;
+        position: absolute;
+        top: 100px;
+        left: 175px;
+        text-shadow: 4.2px 4.2px 4px rgba(24, 40, 72, 0.5);
+        @include responsive(lg){
+            font-size: rclamp(48,88,375,1100);
+            left: 100px;
+        }
+        @include responsive(md){
+            top: 50px;
+            line-height: 90px;
+            span{
+                display: block;
+            }
+        }
+        @include responsive(sm){
+            left: rclamp(20,100,375,768);
+            top: rclamp(98,50,375,768);
+            line-height: 1.2em;
+            letter-spacing: 1.1px;
+        }
+    }
+
+    &__rectangle{
+        height: 64px;
+        background-color: $cWhite;
+        transform: skewX(-39deg);
+        position: absolute;
+        left: 200px;
+        z-index: 200;
+        line-height: 1;
+        padding-left: 25px;
+        padding-top: 14px;
+        box-shadow: 8px 4px $cSecondry;
+        @include responsive(md){
+            left: 125px;
+            height: rclamp(36,64,375,1080);
+        }
+        @include responsive(sm){
+            left: rclamp(30, 125, 375, 768);
+            transform:skewX(-29deg);
+            padding-left: rclamp(15,25,375,768);
+            box-shadow: 4px 2px $cSecondry;
+            // padding-left: 0;
+            padding-top: 0;
+            display: flex;
+            align-items: center;
+            letter-spacing: .4px;
+        }
+        &-1{
+            @extend .l-mv__rectangle;
+            width: 308px;
+            top: 50.14%;
+            @include responsive(sm){
+                width: rclamp(189,308,375,768);
+                // top: 48.28%;
+                top:rclamp(293,350,375,768)
+            }
+        }
+        &-2{
+            @extend .l-mv__rectangle;
+            width: 466px;
+            top: 425px;
+            @include responsive(sm){
+                width:rclamp(289,466,375,768);
+                // top: 345px;
+                top:rclamp(343,425,375,768);
+            }
+        }
+    }
+    &__txt{
+        transform: skewX(39deg);
+        font-size: 32px;
+        font-size: rclamp(19.5,32,375,1080);
+        color: $cSecondry;
+        font-weight: bold;
+        @include responsive(lg){
+            font-size: rclamp(19.5,32,372,1200);
+        }
+        @include responsive(sm){
+            transform: skewX(29deg);
+        }
+
+    }
+    &__news{
+        // width: 100%;
+        // max-width: 1116px;
+        width: min(81.7%,1016px); //値の小さい方を採用して適用
+        height: 64px;
+        position: absolute;
+        bottom: 16px;
+        left: 175px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        // transform: translateX(-50%);
+        z-index: 100;
+        display: flex;
+        background-color: $cSecondry;
+        color: $cWhite;
+        padding-left: 40px;
+        @include responsive(lg){
+            left: 100px;
+        }
+        @include responsive(md){
+            height: rclamp(48,64,375,1080);
+            padding-left: 20px;
+        }
+        @include responsive(sm){
+            padding: 1px;
+            left: rclamp(0, 70,375,768);
+            bottom: 28px;
+            margin-left: 20px;
+            margin-right: 20px;
+            width: rclamp(335,600,375,768);
+            // max-width: px;
+            // width: 90%//値の小さい方を採用して適用
+        }
+        &__bg-be{
+            @include responsive(sm){
+                position:relative;
+                width: 0;
+                height: 22px;
+                top: -22px;
+                left: -2;
+                z-index: 1;
+                ::before{
+                    content: '';
+                    position: absolute;
+                    margin-left: -2px;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: -1;
+                    transform: scaleY(1.3) perspective(.6em) rotateX(4deg);
+                    transform-origin: bottom left;
+                    background: $cSecondry;
+                    width: 74px;
+                }
+            }
+        }
+
+        &__ttl{
+            margin-top: 20px;
+            margin-right: 62px;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: 'Lato';
+            color: $cWhite;
+            @include responsive(md){
+                margin-top: 1em;
+                margin-right: 30px;
+            }
+            @include responsive(sm){
+                margin-top: 1px;
+                margin-left: 10px;
+                font-size: 14px;
+            }
+        }
+        &__txt{
+            transform: skew(40deg);
+            white-space: nowrap;
+            margin-left: 30px;
+            font-weight: bold;
+            @include responsive(sm){
+                transform: skew(0deg);
+                margin-left: 8px;
+            }
+        }
+        &__inner{
+            display: flex;
+            background-color: $cWhite;
+            transform: skewX(-40deg);
+            text-align: center;
+            width: 88.25%;
+            color: $cSecondry;
+            padding-top: 18px;
+            // padding-right: 315px;
+            text-align: center;
+            @include responsive(sm){
+                transform: skewX(0deg);
+                width: 100%;
+                align-items: center;
+                padding-top: 0;
+                font-size: 14px;
+            }
+            time{
+                transform: skewX(40deg);
+                margin-left: 60px;
+                margin-right: 17px;
+                @include responsive(sm){
+                    transform: skewX(0deg);
+                    margin-left: 8px;
+                    margin-right: 5px;
+                    margin-top: -2px;
+                }
+            }
+        }
+        &__af{
+            width: 100px;
+            height: 100%;
+            position: relative;
+            @include responsive(sm){
+                display: none;
+            }
+        }
+    }
+}
+
+@keyframes fade {
+    0%{
+        transform-origin: center;
+        opacity: 0;
+    }
+    15%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 0;
+        z-index: 0;
+    }
+    }
+
+.l-services{
+    margin-top: 160px;
+    position: relative;
+    &__bg{
+        height: 435px;
+        background-color: $cBg;
+        @include responsive(md){
+            margin-top: 560px;
+        }
+        @include responsive(sm){
+            height: 478px;
+            // height: 504px;
+            margin-top: 353px;
+        }
+        &__rectangle{
+            height: 100%;
+            background-color: #fff;
+            clip-path: polygon(100% 0, 100% 54%, 87% 100%, 60% 100%, 87% 0);
+            @include responsive(sm){
+            clip-path: polygon(100% 0, 100% 73%, 83% 100%, 23% 100%, 82% 0);
+            }
+        }
+    }
+    &__body{
+        display: flex;
+        position: absolute;
+        top: 40px;
+        @include responsive(md){
+            flex-direction: column;
+            top: -101%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        @include responsive(sm){
+            top: -49%;
+        }
+    }
+    &__img{
+        width: 620px;
+        height: 440px;
+        @include responsive(md){
+            align-items: center;
+        }
+        @include responsive(sm){
+            width: 100vw;
+            height: 248px;
+        }
+        img{
+            object-fit: cover;
+            width: 100%;
+            @include responsive(sm){
+                height: 248px;
+            }
+        }
+    }
+    &__caption{
+        margin-left: 48px;
+        margin-top: -5px;
+        padding-right: 10px;
+        @include responsive(md){
+            margin-left: 20px;
+            margin-top: 40px;
+        }
+        @include responsive(sm){
+            margin-left: 0;
+            margin-right: 0;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-top: 28px;
+        }
+        &__ttl{
+        margin-top: 26px;
+        margin-bottom: 16px;
+        color: $cText;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.4;
+        @include responsive(sm){
+            font-size: rclamp(24,32,375,768);
+            line-height: 1.6em;
+            margin-top: 10px;
+            span{
+                display: block;
+            }
+        }
+        }
+        &__txt{
+            color: $cText;
+            letter-spacing: .32px;
+            margin-bottom: 43px;
+            line-height: 32px;
+            max-width: 525px;
+            font-weight: normal;
+            @include responsive(lg){
+                span{
+                    display: inline-block;
+                }
+                margin-bottom: 36px;
+            }
+            @include responsive(sm){
+                max-width: 100%;
+                line-height: 2;
+                letter-spacing: normal;
+                font-size: rclamp(14,16,375,678);
+                margin-bottom: 30px;
+                span{
+                    display: inline;
+                }
+            }
+        }
+
+    }
+}
+.l-about{
+    margin-top: 205px;
+    @include responsive(sm){
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 100px;
+    }
+    &__bg{
+        background-image: url(../images/background-image-about.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 656px;
+        padding-top: 40px;
+        padding-left: 175px;
+        @include responsive(md){
+            padding-left: 0;
+        }
+        @include responsive(sm){
+            height: 248px;
+        }
+
+    }
+    &__box{
+        background-color: $cWhite;
+        width: 504px;
+        height: 576px;
+        padding: 42px 48px 48px 48px;
+        @include responsive(md){
+            margin: 0 auto;
+        }
+        @include responsive(sm){
+             display: none;
+        }
+        &--sp{
+            margin-top: 40px;
+            @include responsive--min(sm){
+                display: none;
+            }
+            @include responsive(sm){
+                margin-top: 30px;
+            }
+        }
+    }
+    &__txt{
+        color: $cText;
+        font-size: rclamp(14,16,375,768);
+        letter-spacing: .32px;
+        margin-bottom: 38px;
+        margin-top: 25px;
+        line-height: 32px;
+        @include responsive(sm){
+            line-height: 28px;
+            margin-top: 10px;
+            margin-bottom: 28px;
+        }
+
+
+        span{
+            display: inline-block;
+            @include responsive(sm){
+                display: inline;
+            }
+        }
+    }
+    &__img{
+        margin-top: 32px;
+        @include responsive(sm){
+            display: none;
+        }
+    }
+}
+.l-works{
+    min-height: 761px;
+    margin-top: 170px;
+    background-color: $cBg;
+    position: relative;
+    z-index: -1;
+    @include responsive(sm){
+        margin-top: 120px;
+        padding-top: 37px;
+        padding-bottom: 40px;
+    }
+
+    // overflow: hidden;
+    &::after{
+        content: "";
+        clip-path: polygon(0 0, 75% 0%, 100% 53%, 100% 100%, 26% 100%, 0% 47%);
+        background-color: $cWhite;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include responsive(sm){
+            clip-path: polygon(27.73% 0, 100% 0, 100% 78.5%, 71% 100%, 0 100%, 0% 22%);
+            // height: calc(100% + 40px);
+        }
+    }
+    &__inner{
+        display: flex;
+        max-width: 1004px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -8px;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+        @include responsive(sm){
+            align-items: start;
+            padding-left: 20px;
+            padding-right: 20px;
+            span {
+                display: block;
+            }
+        }
+    }
+    &__subttl{
+        @extend .l-services__caption__ttl;
+        margin-top: 24px;
+        margin-bottom: 0;
+        @include responsive(sm){
+            margin-top: 12px;
+            line-height: 1.5em;
+        }
+    }
+    &__txt{
+        @extend .l-services__caption__txt;
+        text-align: center;
+        margin-top: 26px;
+        margin-bottom: 0;
+        @include responsive(sm){
+            text-align: left;
+            margin-top: 16px;
+            span {
+                display: inline;
+            }
+        }
+    }
+    &__wrapper{
+        display: flex;
+        margin-top: 50px;
+        margin-bottom: 40px;
+        @include responsive(sm){
+            flex-direction: column;
+            margin-bottom: 5px;
+            margin-top: 38px;
+        }
+    }
+    &__box{
+        width: 47.97%;
+        height: auto;
+        // margin-left: 8px;
+        margin-right: 4.06%;
+        box-shadow: 0 0 10px 0 rgba(25, 25, 25, 0.25);
+        position: relative;
+        // padding-top: 58.8%;
+        // overflow: hidden;
+        @include responsive(sm){
+            width: 100vw;
+            margin-right: 0;
+            box-shadow: none;
+        }
+        &:nth-of-type(2n){
+            margin-right: 0;
+            @include responsive(sm){
+                margin-right: 0;
+                margin-left: -20px;
+            }
+        }
+        &:first-of-type{
+            margin-left: 11px;
+            @include responsive(sm){
+                margin-left: -20px;
+            }
+        }
+        &__tag{
+            position: absolute;
+            background-color: $cText;
+            color: $cWhite;
+            width: 56px;
+            height: 56px;
+            font-size: 24px;
+            text-align: center;
+            vertical-align: middle;
+            top: -16px;
+            left: -15px;
+            padding-top: 10px;
+            z-index: 10;
+            @include responsive(sm){
+                top: 120px;
+                left: 0;
+                width: 64px;
+                height: 40px;
+                font-size: 20px;
+                padding-top: 5px;
+            }
+        }
+        &__img{
+            width: 100%;
+            object-fit: cover;
+            @include responsive(sm){
+                // position: relative;
+                height: 160px;
+            }
+            // top: 0;
+            // transform: translateY(-58.8%);
+        }
+        &__body{
+            padding: 20px 22px 30px 23px;
+            background: $cWhite;
+            @include responsive(sm){
+                background: transparent;
+                padding: 12px 22px 32px 20px;
+            }
+        }
+        &__ttl{
+            color: $cAccent;
+            font-size: 24px;
+            margin-bottom: 18px;
+            @include responsive(sm){
+                font-size: rclamp(20,24,375,768);
+                margin-bottom: 10px;
+            }
+        }
+        &__txt{
+            color: $cText;
+            line-height: 2;
+            letter-spacing: .22px;
+            @include responsive(sm){
+                font-size: rclamp(14,16,375,768);
+            }
+        }
+
+    }
+}
+
+.l-recruit{
+    margin-top: 160px;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: auto;
+    background-color: $cBg;
+    flex-direction: column;
+    @include responsive(sm){
+        background-color: $cWhite;
+        margin-top: 107px;
+        padding-top: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 120px;
+        align-items: start;
+    }
+    &__inner{
+        max-width: calc((312 * 3) + (36 * 2) + 28);
+        margin: 0 auto;
+        padding-left: 10px;
+        padding-right: 18px;
+        @include responsive(sm){
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    &__wrapper{
+        display: flex;
+        margin-top: 54px;
+        margin-bottom: 104px;
+        @include responsive(sm){
+            margin-top: 23px;
+            margin-bottom: 40px;
+            margin-left: -20px;
+        }
+        :nth-child(1){
+            margin-top: 40px;
+            @include responsive(sm){
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+        :nth-child(2){
+            margin-top: 0px;
+            @include responsive(sm){
+                margin-bottom: 0;
+            }
+        }
+        :last-child{
+            margin-right: 0;
+            margin-top: -40px;
+            @include responsive(sm){
+                margin-top: 0;
+            }
+        }
+        @include responsive(sm){
+            flex-direction: column;
+            // flex-wrap: wrap;
+        }
+    }
+    &__box{
+        margin-right: 36px;
+        position: relative;
+        width: 312px;
+        height: 240px;
+        @include responsive(md){
+            width:30.95%;
+            height: 200px;
+            margin-right: 3.57%;
+        }
+        @include responsive(sm){
+            width: 100vw;
+            height: 200px;
+            margin-right: 0;
+        }
+        img {
+            width: 100%;
+            height: 240px;
+            // aspect-ratio: 312/240;
+            object-fit: cover;
+            @include responsive(md){
+                height: 200px;
+            }
+        }
+
+        &__label{
+            position: absolute;
+            width: 264px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            // padding-top: 1em;
+            padding-left: 1em;
+            background-color: $cSecondry;
+            color: $cWhite;
+            opacity: .64;
+            bottom: -65px;
+            right: -8px;
+            @include responsive(md){
+                width: 84.61%;
+            }
+            @include responsive(sm){
+                font-size: 16px;
+                height: 1em;
+                width: fit-content;
+                padding-right: 1.31em;
+                padding-left: 0;
+                background-color: transparent;
+                bottom: 15px;
+                left: 20Px;
+                opacity: 1;
+            }
+        }
+    }
+}
+
