@@ -2,6 +2,24 @@ import '../scss/style.scss'
 import AOS from 'aos';
 import "aos/dist/aos.css";
 
+ // スクロール
+ document.querySelectorAll("a[href^='#']:not([href='#'])").forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 100;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+        closeBgmenu();
+    });
+});
+
 //ヘッダー
 const addBgfixed = document.getElementById('header');
 
@@ -61,6 +79,7 @@ const jsHamburger = document.getElementById('js-hamburger');
 const body = document.body;
 const jsGlobalMenu = document.getElementById('js-global-menu');
 
+
 jsHamburger.addEventListener('click', function(){
     body
     if (this.getAttribute('aria-expanded') == 'false') {
@@ -75,7 +94,15 @@ jsHamburger.addEventListener('click', function(){
         document.querySelector('.hamburger').style.position = 'absolute';
     }
 });
-
+function closeBgmenu() {
+    jsHamburger.setAttribute('aria-expanded', false)
+    jsGlobalMenu.style.visibility = 'hidden'
+    jsGlobalMenu.setAttribute('aria-hidden', 'true')
+    document.querySelector('.hamburger').style.position = 'absolute';
+  }
+  document.addEventListener("scroll", function(){
+    closeBgmenu();
+  });
 //ローダー
 window.addEventListener('load', function(){
     document.body.style.overflow = 'hidden';
@@ -97,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let plusHeight = -700;
 
     if(windowWidth < 768){
-        plusHeight = -500;
+        plusHeight = -600;
     }
     AOS.init({
         duration: 800, // アニメーションの持続時間

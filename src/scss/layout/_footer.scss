@@ -95,7 +95,7 @@
     &__menu-1{
         margin-right: 78px;
         @include responsive(sm){
-            margin-bottom: 60px;
+            margin-bottom: 62px;
             font-size: 14px;
             letter-spacing: normal;
         }
@@ -103,7 +103,7 @@
             margin-right: 22px;
             @include responsive(sm){
                 margin-right: 0;
-                margin-bottom: 22px;
+                margin-bottom: 21px;
             }
             &:nth-last-child(1){
                 margin-right: 0;
@@ -115,7 +115,7 @@
     }
     &__menu-2{
         @include responsive(sm){
-            margin-bottom: 81px;
+            margin-bottom: 80px;
             font-size: 14px;
             letter-spacing: normal;
         }

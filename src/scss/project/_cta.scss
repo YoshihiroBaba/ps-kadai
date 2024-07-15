@@ -17,7 +17,7 @@
     flex-direction: column;
     @include responsive(sm){
         padding-left: 20px;
-        padding-right: 20px;
+        padding-right: 19px;
         padding-top: 82px;
         align-items: start;
         padding-bottom: 95px;
@@ -28,9 +28,10 @@
         line-height: 2em;
         letter-spacing: .32px;
         @include responsive(sm){
-            margin-top: 15px;
+            margin-top: 13px;
             text-align: left;
-            margin-bottom: 22px;
+            margin-bottom: 24px;
+            letter-spacing: .14px;
             br{
                 display: none;
             }

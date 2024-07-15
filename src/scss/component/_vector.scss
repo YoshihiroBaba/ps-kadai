@@ -22,8 +22,8 @@
         right: 16px;
         @include responsive(sm){
         right:0;
-        top: 50%;
-        transform: translateY(-50%) skew(45deg);
+        top: 65%;
+        transform: translateY(-65%) skew(45deg);
         }
     }
   }

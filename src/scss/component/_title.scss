@@ -3,6 +3,9 @@
 .c-ttl{
     display: flex;
     align-items: baseline;
+    @include responsive(sm){
+        // margin-top: -2px;
+    }
     &__en{
         font-size: 48px;
         font-weight: bold;
