@@ -15,9 +15,10 @@
     align-items: center;
     justify-content: start;
     flex-direction: column;
+
     @include responsive(sm){
-        padding-left: 20px;
-        padding-right: 19px;
+        padding-left: rclamp(20,50,375,768);
+        padding-right: rclamp(19,50,375,768);
         padding-top: 82px;
         align-items: start;
         padding-bottom: 95px;

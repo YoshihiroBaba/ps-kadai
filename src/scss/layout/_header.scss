@@ -92,6 +92,9 @@
         }
     }
     &__navtxt{
+        &:hover{
+            color: $cAccent !important;
+        }
         &--burgar:hover{
             color: $cText;
         }

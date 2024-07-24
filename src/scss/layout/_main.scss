@@ -70,6 +70,9 @@
         top: 100px;
         left: 175px;
         text-shadow: 4.2px 4.2px 4px rgba(24, 40, 72, 0.5);
+        @include responsive--min(lg){
+            left: 13%;
+        }
         @include responsive(lg){
             font-size: rclamp(48,88,375,1100);
             left: 100px;
@@ -100,7 +103,10 @@
         padding-left: 25px;
         padding-top: 14px;
         box-shadow: 8px 4px $cSecondry;
-        @include responsive(md){
+        @include responsive--min(lg){
+            left: 15%;
+        }
+        @include responsive(lg){
             left: 125px;
             height: rclamp(36,64,375,1080);
         }
@@ -166,6 +172,9 @@
         background-color: $cSecondry;
         color: $cWhite;
         padding-left: 40px;
+        @include responsive--min(lg){
+            left: 18%;
+        }
         @include responsive(lg){
             left: 100px;
         }
@@ -298,6 +307,9 @@
     &__bg{
         height: 435px;
         background-color: $cBg;
+        @include responsive--min(lmd){
+            height: 630px;
+        }
         @include responsive(md){
             margin-top: 560px;
         }
@@ -319,6 +331,10 @@
         display: flex;
         position: absolute;
         top: 40px;
+
+        @include responsive--min(lmd){
+            margin-left: 13%;
+        }
         @include responsive(md){
             flex-direction: column;
             top: -101%;
@@ -328,6 +344,7 @@
         @include responsive(sm){
             top: -49%;
         }
+
     }
     &__img{
         width: 620px;
@@ -358,8 +375,8 @@
         @include responsive(sm){
             margin-left: 0;
             margin-right: 0;
-            padding-right: 19px;
-            padding-left: 20px;
+            padding-right: rclamp(19,50,375,768);
+            padding-left: rclamp(20,50,375,768);
             margin-top: 28px;
         }
         &__ttl{
@@ -390,6 +407,14 @@
             }
             @include responsive(lg){
                 margin-bottom: 36px;
+                span {
+                    display: inline;
+                }
+            }
+            @include responsive(md){
+                span{
+                    display: block;
+                }
             }
             @include responsive(sm){
                 max-width: 100%;
@@ -408,8 +433,8 @@
 .l-about{
     margin-top: 205px;
     @include responsive(sm){
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: rclamp(20,50,375,768);
+        padding-right: rclamp(20,50,375,768);
         margin-top: 100px;
     }
     &__bg{
@@ -434,6 +459,9 @@
         width: 504px;
         height: 576px;
         padding: 42px 48px 48px 48px;
+        @include responsive--min(lmd){
+            margin-left: 8%;
+        }
         @include responsive(md){
             margin: 0 auto;
         }
@@ -483,7 +511,7 @@
     margin-top: 160px;
     background-color: $cBg;
     position: relative;
-    z-index: -1;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -496,7 +524,7 @@
     }
 
     // overflow: hidden;
-    &::before{
+    &::after{
         content: "";
         clip-path: polygon(0 0, 74.5% 0%, 100% 54%, 100% 100%, 25.5% 100%, 0% 47%);
         background-color: $cWhite;
@@ -521,10 +549,14 @@
         flex-direction: column;
         padding-left: 18px;
         padding-right: 2px;
+        @include responsive(md){
+            padding-left: 20px;
+            padding-right: 20px;
+        }
         @include responsive(sm){
             align-items: start;
             padding-left: 20px;
-            padding-right: 20px;
+            padding-right: 0;
             span {
                 display: block;
             }
@@ -541,7 +573,7 @@
         @include responsive(sm){
             margin-top: 12px;
             line-height: 1.5em;
-            margin-left: 20px;
+            margin-left: rclamp(20,50,375,768);
             text-align: left;
             span {
                 display: block;
@@ -561,8 +593,8 @@
         @include responsive(sm){
             text-align: left;
             margin-top: 16px;
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-left: rclamp(20,50,375,768);
+            margin-right: rclamp(20,50,375,768);
             font-size: rclamp(14,16,375,678);
             span {
                 display: inline;
@@ -644,7 +676,7 @@
             background: $cWhite;
             @include responsive(sm){
                 background: transparent;
-                padding: 12px 22px 32px 20px;
+                padding: 12px rclamp(22,50,375,768) 32px rclamp(20,50,375,768);
             }
         }
         &__ttl{
@@ -682,7 +714,7 @@
         background-color: $cWhite;
         margin-top: 107px;
         padding-top: 0;
-        padding-left: 20px;
+        // padding-left: 20px;
         padding-right: 20px;
         padding-bottom: 120px;
         align-items: start;
@@ -704,7 +736,7 @@
         @include responsive(sm){
             margin-top: 23px;
             margin-bottom: 40px;
-            margin-left: -20px;
+            // margin-left: -20px;
         }
         :nth-child(1){
             margin-top: 40px;
@@ -780,7 +812,7 @@
                 padding-left: 0;
                 background-color: transparent;
                 bottom: 18px;
-                left: 20Px;
+                left: rclamp(20,50,375,768);
                 opacity: 1;
             }
         }

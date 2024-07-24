@@ -27,7 +27,12 @@
 .mgt-7px{
     margin-top: -7px;
     @include responsive(sm){
-        margin-left: 20px;
+        margin-left: rclamp(20,50,375,768);
+    }
+}
+.mgl20-50{
+    @include responsive(sm){
+        margin-left: rclamp(20,50,375,768);
     }
 }
 .mgr-7px{

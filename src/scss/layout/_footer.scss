@@ -10,11 +10,12 @@
         justify-content: space-between;
         @include responsive(md){
             padding-right: 50px;
+            padding-left: 50px;
         }
         @include responsive(sm){
             flex-direction: column-reverse;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: rclamp(20,50,375,768);
+            padding-right: rclamp(20,50,375,768);
         }
     }
 

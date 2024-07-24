@@ -29,7 +29,7 @@ const windowHeight = document.documentElement.scrollTop;
 
 let breakpoint = 768;
 
-if(windowWidth < 768){
+if(windowWidth < 550){
     breakpoint = 667;
 }
 

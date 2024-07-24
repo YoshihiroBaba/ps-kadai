@@ -19,6 +19,8 @@
     $with:0;
     @if($size == llg){
         $with:2500px;
+    } @else if($size == lmd){
+        $with:1800px;
     } @else if($size == lg){
         $with:1367px;
     } @else if($size == md){
