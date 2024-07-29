@@ -53,3 +53,10 @@
 .--hrSecondary{
     background: linear-gradient(-50deg,transparent 49%,$cSecondry 49%,$cSecondry calc(50% + 1px),transparent calc(50% + 1px));
 }
+
+.u--body-80px{
+margin-top: 80px;
+@include responsive(sm){
+    margin-top: 58px;
+}
+}

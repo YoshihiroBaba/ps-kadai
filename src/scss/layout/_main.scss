@@ -237,8 +237,8 @@
         &__txt{
             transform: skew(40deg);
             white-space: nowrap;
-            margin-left: 30px;
-            font-weight: bold;
+            margin-left: 24px;
+            font-weight: normal;
             @include responsive(sm){
                 transform: skew(0deg);
                 margin-left: 8px;
@@ -248,12 +248,12 @@
             display: flex;
             background-color: $cWhite;
             transform: skewX(-40deg);
-            text-align: center;
+            align-items: center;
             width: 88.25%;
             color: $cSecondry;
-            padding-top: 18px;
+
+            // padding-top: 18px;
             // padding-right: 315px;
-            text-align: center;
             @include responsive(sm){
                 transform: skewX(0deg);
                 width: 100%;
@@ -263,8 +263,8 @@
             }
             time{
                 transform: skewX(40deg);
-                margin-left: 60px;
-                margin-right: 17px;
+                margin-left: 52px;
+                margin-right: 24px;
                 @include responsive(sm){
                     transform: skewX(0deg);
                     margin-left: 8px;

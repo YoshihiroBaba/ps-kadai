@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
         const targetId = this.getAttribute("href");
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-            var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 100;
+            var targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 100;
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -30,7 +30,7 @@ const windowHeight = document.documentElement.scrollTop;
 let breakpoint = 768;
 
 if(windowWidth < 550){
-    breakpoint = 667;
+    breakpoint = 669;
 }
 
 const Body = document.querySelector('body');
@@ -43,7 +43,7 @@ const bugarLine = document.querySelector('.hamburger__line')
 
 if(windowHeight > breakpoint) {
     addBgfixed.classList.add('--bg-fixed')
-    Body.style.marginTop = '80px';
+    Body.classList.add('u--body-80px');
     wlogo.style.display = 'block';
     blogo.style.display = 'none';
     bugarLine.style.backgroundColor = '#182848';
@@ -57,7 +57,7 @@ if(windowHeight > breakpoint) {
 else{
     bugarLine.style.backgroundColor = '#ffffff';
     addBgfixed.classList.remove('--bg-fixed');
-    Body.style.marginTop = '0';
+    Body.classList.remove('u--body-80px');
     wlogo.style.display = 'none';
     blogo.style.display = 'block';
     btxts.forEach( btxt => {
@@ -100,9 +100,9 @@ function closeBgmenu() {
     jsGlobalMenu.setAttribute('aria-hidden', 'true')
     document.querySelector('.hamburger').style.position = 'absolute';
   }
-  document.addEventListener("scroll", function(){
-    closeBgmenu();
-  });
+//   document.addEventListener("scroll", function(){
+//     closeBgmenu();
+//   });
 //ローダー
 window.addEventListener('load', function(){
     document.body.style.overflow = 'hidden';
