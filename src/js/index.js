@@ -104,8 +104,11 @@ function closeBgmenu() {
 //     closeBgmenu();
 //   });
 //ローダー
+const isFirstLoad = sessionStorage.getItem('isFirstLoad');
+
 window.addEventListener('load', function(){
     document.body.style.overflow = 'hidden';
+    if(isFirstLoad !== 'true'){
     setTimeout(function(){
         document.querySelector('.loadingWrap').style.opacity = '0';
         setTimeout(function(){
@@ -116,7 +119,16 @@ window.addEventListener('load', function(){
         },1000);
         // AOS.refresh();
     },2000);
+    sessionStorage.setItem('isFirstLoad',true);
+}else{
+            document.querySelector('.loadingWrap').style.opacity = '0';
+            document.querySelector('.loadingWrap').style.position = 'absolute';
+            document.body.style.overflow = 'auto';
+            document.querySelector('#contents').style.opacity = '1';
+            document.querySelector('#contents').style.visibility = 'visible';
+};
 });
+
 document.addEventListener("DOMContentLoaded", () => {
     const windowWidth = window.innerWidth;
     const windowHeight = document.documentElement.scrollTop;
