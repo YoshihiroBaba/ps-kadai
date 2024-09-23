@@ -46,9 +46,9 @@ if(windowHeight > breakpoint) {
     Body.classList.add('u--body-80px');
     wlogo.style.display = 'block';
     blogo.style.display = 'none';
-    bugarLine.style.backgroundColor = '#182848';
+    bugarLine.style.backgroundColor = '#35495E';
     btxts.forEach( btxt => {
-        btxt.style.color = '#182848';
+        btxt.style.color = '#35495E';
     })
     bhrs.forEach(bhr => {
         bhr.classList.add('--hrSecondary');
@@ -110,19 +110,19 @@ window.addEventListener('load', function(){
     document.body.style.overflow = 'hidden';
     if(isFirstLoad !== 'true'){
     setTimeout(function(){
-        document.querySelector('.loadingWrap').style.opacity = '0';
+        document.querySelector('.loadingWrap').style.display = 'none';
         setTimeout(function(){
-            document.querySelector('.loadingWrap').style.position = 'absolute';
+            // document.querySelector(".loodingWrap").style.display = "none"
             document.body.style.overflow = 'auto';
             document.querySelector('#contents').style.opacity = '1';
             document.querySelector('#contents').style.visibility = 'visible';
-        },1000);
+        },2000);
         // AOS.refresh();
-    },2000);
+    },3000);
     sessionStorage.setItem('isFirstLoad',true);
 }else{
-            document.querySelector('.loadingWrap').style.opacity = '0';
-            document.querySelector('.loadingWrap').style.position = 'absolute';
+            document.querySelector('.loadingWrap').style.display = 'none';
+            // document.querySelector('.loadingWrap').style.position = 'absolute';
             document.body.style.overflow = 'auto';
             document.querySelector('#contents').style.opacity = '1';
             document.querySelector('#contents').style.visibility = 'visible';

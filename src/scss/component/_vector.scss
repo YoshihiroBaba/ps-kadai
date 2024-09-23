@@ -13,6 +13,9 @@
         position:absolute;
         top: 50%;
         right: 32px;
+        @include responsive(md){
+            right: 40%;
+        }
     }
     &--recruit{
         @extend .c-vector;
@@ -20,9 +23,12 @@
         position:absolute;
         bottom: 45%;
         right: 16px;
+        &:hover{
+            opacity: 1;
+        }
         @include responsive(sm){
-        right:0;
-        top: 65%;
+        right: rclamp(20,250,330,768);
+        top: 60%;
         transform: translateY(-65%) skew(45deg);
         }
     }

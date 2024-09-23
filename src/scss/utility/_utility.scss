@@ -14,14 +14,29 @@
 
 .--bgAccent{
     background-color: $cAccent;
+    &:hover{
+        transition: .3s;
+        opacity: .9;
+        scale: (1.01);
+        background-color: color-mix(in srgb, $cAccent, black 20%);
+    }
 }
 
 .--bgBlack{
     background-color: $cText;
+    &:hover{
+        transition: .3s;
+        opacity: .9;
+        scale: (1.01);
+        background-color: color-mix(in srgb, $cText, black 20%);
+    }
 }
 
-.lsp-1px{
+.mdfs-10px{
     letter-spacing: .5px;
+    @include responsive(md){
+        font-size: 38px;
+    }
 }
 
 .mgt-7px{
@@ -59,4 +74,11 @@ margin-top: 80px;
 @include responsive(sm){
     margin-top: 58px;
 }
+}
+
+.u--cSecondry-sm{
+    @include responsive(sm){
+        border-bottom: 2px solid $cWhite;
+        border-right: 2px solid $cWhite;
+    }
 }

@@ -1,3 +1,5 @@
+@use '../foundation/index' as *;
+
 .circle-spin-2 {
     --size: 48px;
     --stroke-width: calc(var(--size) / 6);
@@ -48,8 +50,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // z-index: 100;
-}
+    z-index: 100;
+    background-color: $cWhite;
+    position: relative;
+
+  }
+.loadingImg{
+    width: 10rem;
+    height: 10rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
 #contents{
     width: 100%;

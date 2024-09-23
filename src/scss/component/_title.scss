@@ -15,6 +15,11 @@
         @include responsive(sm){
             font-size: rclamp(32,48,375,768);
         }
+        >span {
+            @include responsive(sm){
+                display: none;
+            }
+        }
     }
     &__hr{
         width: 23px;
@@ -35,6 +40,11 @@
         line-height: 24px;
         @include responsive(sm){
             font-size: rclamp(20,24,375,768);
+        }
+        >span {
+            @include responsive(sm){
+                display: none;
+            }
         }
     }
 

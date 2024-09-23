@@ -102,9 +102,16 @@
         }
         &__list{
             margin-right: 22px;
+            :hover{
+                transition: .3s;
+                scale: (1.05);
+            }
             @include responsive(sm){
                 margin-right: 0;
                 margin-bottom: 21px;
+                :hover{
+                    scale: (1.01);
+                }
             }
             &:nth-last-child(1){
                 margin-right: 0;
@@ -122,9 +129,16 @@
         }
         &__list{
             margin-right: 22px;
+            :hover{
+                transition: .3s;
+                scale: (1.05);
+            }
             @include responsive(sm){
                 margin-right: 0;
                 margin-bottom: 22px;
+                :hover{
+                    scale: (1.01);
+                }
             }
             &:nth-last-child(1){
                 margin-right: 0;

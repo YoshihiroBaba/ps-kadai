@@ -24,7 +24,7 @@
         clip-path: polygon(41.2% 0, 100% 0, 100% 100%, 0 100%);
         height: 100%;
         width: 100%;
-        background-position: center;
+        // background-position: right;
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
@@ -45,16 +45,35 @@
         &--1{
             @extend .l-mv__bgimg;
             background-image: url(../images/top-image-1.jpg);
+            background-position: left;
+
+            @include responsive(sm){
+                // background-position-x: 100px;
+            }
         }
         &--2{
             @extend .l-mv__bgimg;
             background-image: url(../images/top-image-2.jpg);
+            background-position: right;
             animation-delay: 6s;
+            @include responsive(md){
+                background-position: 60%;
+            }
+            @include responsive(sm){
+                background-position: 55%;
+            }
         }
         &--3{
             @extend .l-mv__bgimg;
             background-image: url(../images/top-image-3.jpg);
+            background-position: right;
             animation-delay: 12s;
+            @include responsive(md){
+                background-position: 50%;
+            }
+            @include responsive(sm){
+                background-position: center;
+            }
         }
     }
 
@@ -86,7 +105,7 @@
         }
         @include responsive(sm){
             left: rclamp(20,100,375,768);
-            top: rclamp(98,50,375,768);
+            // top: rclamp(98,50,375,768);
             line-height: 1.2em;
             letter-spacing: 1.1px;
         }
@@ -125,20 +144,26 @@
             @extend .l-mv__rectangle;
             width: 308px;
             top: 50.14%;
+            @include responsive(md){
+                width: rclamp(189,308,375,1080);
+                top: 52.28%;
+                // top:rclamp(293,350,375,768)
+            }
             @include responsive(sm){
-                width: rclamp(189,308,375,768);
-                // top: 48.28%;
-                top:rclamp(293,350,375,768)
+                top: 54%;
             }
         }
         &-2{
             @extend .l-mv__rectangle;
-            width: 466px;
+            width: 436px;
             top: 425px;
+            @include responsive(md){
+                width:rclamp(269,436,375,1080);
+                top: 64%;
+                // top:rclamp(343,425,375,768);
+            }
             @include responsive(sm){
-                width:rclamp(289,466,375,768);
-                // top: 345px;
-                top:rclamp(343,425,375,768);
+                top: 63%;
             }
         }
     }
@@ -191,6 +216,11 @@
             width: rclamp(335,600,375,768);
             // max-width: px;
             // width: 90%//値の小さい方を採用して適用
+        }
+        &__cover:hover{
+            transition: .3;
+            scale: (1.01);
+            opacity: .9;
         }
         &__bg-be{
             @include responsive(sm){
@@ -294,6 +324,7 @@
     }
     80%{
         opacity: 0.8;
+
     }
     100%{
         opacity: 0;
@@ -359,7 +390,11 @@
         img{
             object-fit: cover;
             width: 100%;
+            @include responsive(md){
+                margin-top: -24px;
+            }
             @include responsive(sm){
+                margin-top: 0;
                 height: 248px;
             }
         }
@@ -370,7 +405,7 @@
         padding-right: 10px;
         @include responsive(md){
             margin-left: 20px;
-            margin-top: 40px;
+            margin-top: 60px;
         }
         @include responsive(sm){
             margin-left: 0;
@@ -459,6 +494,7 @@
         width: 504px;
         height: 576px;
         padding: 42px 48px 48px 48px;
+
         @include responsive--min(lmd){
             margin-left: 8%;
         }
@@ -490,8 +526,6 @@
             margin-top: 10px;
             margin-bottom: 28px;
         }
-
-
         span{
             display: inline-block;
             @include responsive(sm){
@@ -739,21 +773,22 @@
             // margin-left: -20px;
         }
         :nth-child(1){
-            margin-top: 40px;
+            margin-top: 80px;
             @include responsive(sm){
                 margin-top: 0;
                 margin-bottom: 0;
             }
         }
         :nth-child(2){
-            margin-top: 0px;
+            margin-top: 40px;
             @include responsive(sm){
+                margin-top: 0;
                 margin-bottom: 0;
             }
         }
         :last-child{
             margin-right: 0;
-            margin-top: -40px;
+            margin-top: 0px;
             @include responsive(sm){
                 margin-top: 0;
             }
@@ -765,9 +800,20 @@
     }
     &__box{
         margin-right: 36px;
-        position: relative;
         width: 312px;
         height: 240px;
+        position: relative;
+        &:hover{
+            transition: .3s;
+            scale: (1.01);
+        }
+        picture{
+            filter: grayscale(0);
+        &:hover{
+            transition: .3s;
+            filter: grayscale(80%);
+        }
+    }
         @include responsive(md){
             width:30.95%;
             height: 200px;
@@ -799,21 +845,19 @@
             background-color: $cSecondry;
             color: $cWhite;
             opacity: .64;
-            bottom: -65px;
+            bottom: -25px;
             right: -8px;
             @include responsive(md){
                 width: 84.61%;
             }
             @include responsive(sm){
                 font-size: 16px;
-                height: 1em;
-                width: fit-content;
-                padding-right: 1.31em;
-                padding-left: 0;
-                background-color: transparent;
-                bottom: 18px;
-                left: rclamp(20,50,375,768);
-                opacity: 1;
+                height: 3em;
+                width: 65%;
+                background: linear-gradient(90deg, rgba(52,116,116,0.8) 90%, rgba(52, 116, 116, 0));
+                left: 0;
+                bottom: 0;
+                padding-left: rclamp(10,50,375,768);
             }
         }
     }
