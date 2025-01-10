@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 800, // アニメーションの持続時間
         once: true, // アニメーションを一度だけ実行
         offset: plusHeight,
-        anchorPlacement: "top-bottom",
+        anchorPlacement: 'top-center',
       });
     // AOS.refresh();
 });
